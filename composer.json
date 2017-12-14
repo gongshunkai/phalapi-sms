@@ -1,5 +1,5 @@
 {
-    "name": "phalapi/image",
+    "name": "phalapi/sms",
     "description": "PhalApi 2.x 扩展类库 - 短信拓展",
     "keywords": [
         "phalapi", "phalapi-sms", "sms"
