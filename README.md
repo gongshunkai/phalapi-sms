@@ -8,15 +8,12 @@
 ```
 在/path/to/phalapi/config/app.php文件中，配置： 
 ```
-    'apiCommonRules' => array(//'sign' => array('name' => 'sign', 'require' => true),
-    ),
-
-    "SMSService" => array(
-        "accountSid"   => "",  //主帐号
-        "accountToken" => "",  //主帐号Token
-        "appId"        => "",  //应用Id
-        "serverPort"   => "",  //请求端口 默认:8883
-        "serverIP"     => ""   //请求地址不需要写https:// 默认:sandboxapp.cloopen.com
+    'SMSService' => array(
+        'accountSid'   => '',  //主帐号
+        'accountToken' => '',  //主帐号Token
+        'appId'        => '',  //应用Id
+        'serverPort'   => '',  //请求端口 默认:8883
+        'serverIP'     => ''   //请求地址不需要写https:// 默认:sandboxapp.cloopen.com
     )
 ```
 然后执行```composer update```。  
@@ -27,7 +24,7 @@
 
 //初始化SMS\Lite传入配置文件地址,第二个参数为是否开启debug模式开启debug模式(默认false)会把返回结果打印出来(生产环境请不要进行设置)
 $di->sms = function() {
-	return new \PhalApi\SMS\Lite(\PhalApi\DI()->config->get('app.SMSService'));
+	return new \PhalApi\SMS\Lite();
 };
 ```
 

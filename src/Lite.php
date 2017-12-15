@@ -42,17 +42,15 @@ class Lite
      * @param  $cofAddress string 配置文件地址
      * @param  $debug      bool   是否开启调试模式
      */
-    public function __construct($cofAddress, $debug = false) {
+    public function __construct($config = null, $debug = false) {
 
         $this->debug = $debug;
 
-        //获得配置项
-        $config = \PhalApi\DI()->config->get($cofAddress);
-
-        //配置项是否存在
-        if (!$config) {
-            throw new BadRequestException('Config There is no', 1);
+        if ($config === NULL) {
+            //获得配置项
+            $config = \PhalApi\DI()->config->get('app.SMSService');
         }
+
         //主帐号是否配置
         if ($this->getIndex($config, 'accountSid')) {
             $this->accountSid = $config['accountSid'];

@@ -15,8 +15,6 @@
 
 namespace PhalApi\SMS\SDK;
 
-use PhalApi\Exception\BadRequestException;
-
 class REST
 {
     private $AccountSid;
